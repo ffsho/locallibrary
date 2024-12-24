@@ -18,6 +18,15 @@
                         <li><a href="{% url 'index' %}">Главная</a></li>
                         <li><a href="{% url 'books' %}">Книги</a></li>
                         <li><a href="{% url 'authors' %}">Авторы</a></li>
+
+                        {% if user.is_authenticated %}
+                        <li><a href="{% url 'my-borrowed' %}">Арендованные книги</a></li>
+                        <li>Пользователь: {{ user.get_username }}</li>
+                        <li><a href="{% url 'logout' %}?next={{ request.path }}">Выйти из аккаунта</a></li>
+                        {% else %}
+                        <li><a href="{% url 'login' %}?next={{ request.path }}">Войти</a></li>
+                        {% endif %}
+                    
                     </ul>
                 {% endblock %}
             </div>
