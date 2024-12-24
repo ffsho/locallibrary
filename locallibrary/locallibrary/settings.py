@@ -54,8 +54,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'locallibrary.urls'
 
 
-import os
 
+import os
 
 TEMPLATES = [
     {
@@ -129,4 +129,4 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-LOGIN_REDIRECT = '/'
+LOGIN_REDIRECT_URL = '/'
