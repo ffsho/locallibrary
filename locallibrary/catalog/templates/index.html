@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Локальная библиотека</h1>
+
+<p>Добро пожаловать в <em>Локальную библиотеку</em>, базовый Django проект</p>
+
+
+<h2>Динамический контент</h2>
+
+<p>В нашей библиотеке насчитывается:</p>
+<ul>
+<li><strong>Книги:</strong> {{ num_books }}</li>
+<li><strong>Количество книг (копии):</strong> {{ num_instances }}</li>
+<li><strong>Доступных копий:</strong> {{ num_instances_available }}</li>
+<li><strong>Авторы:</strong> {{ num_authors }}</li>
+</ul>
+
+<p>Вы посещали эту страницу: {{ num_visits }} раз</p>
+
+{% endblock %}
