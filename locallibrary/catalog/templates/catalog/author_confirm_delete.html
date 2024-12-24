@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h1>Удалить автора</h1>
+
+
+<p>Вы уверены, что хотите удалить автора: {{ author }}?</p>
+<p>При удалении автора, также будут удалены все его книги:</p>
+{% for book in author.book_set.all %}
+      <dt><a href="{% url 'book-detail' book.pk %}">{{book}}</a> ({{book.bookinstance_set.all.count}})</dt>
+      {% empty %}
+      <p>This author has no books.</p>
+    {% endfor %}
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <input type="submit" action="" value="Да, удалить.">
+</form>
+
+
+{% endblock %}
